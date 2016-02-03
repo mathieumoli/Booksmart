@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0b8aca13-36e9-4aab-8432-ba20ccf2bd80" name="Booksmart" url="http://localhost">
+        <fileTransfer mountedRoot="$PROJECT_DIR$/../Deployement/Booksmart" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
