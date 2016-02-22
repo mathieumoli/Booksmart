@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+$this->load->library('facebook');
+
+$siteurl="http://localhost:8888/index.php";
 ?> <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </tr>
     <tr class="menu"><td class="cote">&nbsp;</td>
         <td style="text-align: center">
-            <nav class="nav"><a class="btn btn-danger" type="button" href="">Home</a><a class="btn btn-danger" type="button" href="">Sell</a><a 	class="btn btn-danger" type="button" href="">Account</a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
+            <nav class="nav"><a class="btn btn-danger" type="button" href="">Home</a><a class="btn btn-danger" type="button" href="">Sell</a><a 	class="btn btn-danger" type="button" href="<?php echo $siteurl ?>/account/">Account</a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
         <td class="cote">&nbsp;</td>
     </tr>
     <tr class="courseMenu">
