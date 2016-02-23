@@ -1,9 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-$this->load->library('facebook');
+if(base_url()=="http://booksmart.esy.es/"){$siteurl="http://booksmart.esy.es:8888/index.php";
+}else{
+$siteurl="http://localhost:8888/index.php";}
 
-$siteurl="http://localhost:8888/index.php";
-
+if(isset($_COOKIE['booksmart_name'])){$user_name=$_COOKIE['booksmart_name'];}
 ?> <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@ $siteurl="http://localhost:8888/index.php";
     </tr>
     <tr class="menu"><td class="cote">&nbsp;</td>
         <td style="text-align: center">
-            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" href="">Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php if(isset($user_profile)){echo $user_profile['name'];}else {echo 'Account';}?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
+            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" href="">Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php if(isset($user_name)){echo $user_name;}else {echo 'Account';}?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
         <td class="cote">&nbsp;</td>
     </tr>
     <tr class="courseMenu">

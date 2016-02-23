@@ -19,13 +19,18 @@ class Account extends CI_Controller {
         $this->load->helper('url');
 
         if ($this->user) {
+
             $data['user_profile'] = $this->facebook->api('/me');
 
             // Get logout url of facebook
             $data['logout_url'] = $this->facebook->getLogoutUrl(array('next' => base_url( 'index.php/account/logout')));
 
             // Send data to profile page
-            $this->load->view('static_page', $data);
+            if(isset($_COOKIE['booksmart_name'])){
+                $this->load->view('profile.php',$data);
+
+            }else{
+            $this->load->view('static_page', $data);}
         } else {
 
             // Store users facebook login url

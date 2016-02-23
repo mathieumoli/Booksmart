@@ -519,3 +519,12 @@ $config['base_url']	= 'http://localhost:8888/';
 //MUST BE CHANGED FOR HOSTINGER
 
 //$config['base_url']	= 'http://booksmart.esy.es/';
+
+// Include the Facebook and give proper path
+/*require_once("public_html/application/libraries/facebook.php");
+
+$config = array();
+$config['appId'] = $this->config->item('facebook_app_id');
+$config['secret'] = $this->config->item('facebook_secret');
+$config['fileUpload'] = false;
+$facebook = new Facebook($config);*/
