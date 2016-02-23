@@ -25,7 +25,7 @@ class Account extends CI_Controller {
             $data['logout_url'] = $this->facebook->getLogoutUrl(array('next' => base_url( 'index.php/account/logout')));
 
             // Send data to profile page
-            $this->load->view('profile', $data);
+            $this->load->view('static_page', $data);
         } else {
 
             // Store users facebook login url

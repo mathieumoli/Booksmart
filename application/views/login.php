@@ -1,10 +1,4 @@
-<html>
-<head>
-    <title>Login with Facebook | arjunphp.com</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-</head>
-<body>
+
 
     <div class="container">
 
@@ -30,6 +24,3 @@
  
 
     </div> <!-- /container -->
-    <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</body>
-</html>

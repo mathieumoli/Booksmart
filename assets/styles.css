@@ -145,7 +145,7 @@ header, section, footer, aside, article, figure {
 	text-align: center;
 }
 
-.cadrePrincipal {
+#cadrePrincipal {
 	padding-top:30px;
 	padding-bottom:30px;
 	text-align: center;

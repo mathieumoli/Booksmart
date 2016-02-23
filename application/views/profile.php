@@ -18,16 +18,6 @@ $cookie_value = $user_profile['name'];
 setcookie($cookie_name, $cookie_value, time() + 3600); // 86400 = 1 day
 
 ?>
-?><!DOCTYPE html>
-<html>
-<head>
-    <title>BookSmart</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php echo base_url('assets/styles.css');?>" rel="stylesheet" />
-    <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet">
-    <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
-</head>
-<body>
 
 <?//php foreach ($user_profile as $item):?>
 <?//php echo $item ?>
@@ -59,6 +49,3 @@ setcookie($cookie_name, $cookie_value, time() + 3600); // 86400 = 1 day
         </div>
     </form>
 </div> <!-- /container -->
-<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-</body>
-</html>
