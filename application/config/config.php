@@ -514,4 +514,4 @@ $config['proxy_ips'] = '';
 
 //MUST BE CHANGED FOR HOSTINGER
 
-$config['base_url']	= 'http://localhost:8888/';
+$config['base_url']	= 'http://booksmart.esy.es/';
