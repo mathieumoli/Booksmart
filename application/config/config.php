@@ -513,9 +513,9 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //FOR LOCALHOST
-//$config['base_url']	= 'http://localhost:8888/';
+$config['base_url']	= 'http://localhost:8888/';
 
 
 //MUST BE CHANGED FOR HOSTINGER
 
-$config['base_url']	= 'http://booksmart.esy.es/';
+//$config['base_url']	= 'http://booksmart.esy.es/';
