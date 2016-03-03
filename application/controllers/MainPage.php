@@ -11,19 +11,20 @@ class MainPage extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->helper('url');
     }
 
 
     public function index()
     {
+        $this->load->helper('url');
         $this->load->view('static_page');
     }
 
 
     public function login(){
 
-        $this->load->library('facebook'); // Automatically picks appId and secret from config
+        //$this->load->library('facebook');
+        // Automatically picks appId and secret from config
         // OR
         // You can pass different one like this
         //$this->load->library('facebook', array(
@@ -45,7 +46,7 @@ class MainPage extends CI_Controller {
 
         if ($user) {
 
-            $data['logout_url'] = site_url('welcome/logout'); // Logs off application
+            $data['logout_url'] = site_url('mainpage/logout'); // Logs off application
             // OR
             // Logs off FB!
             // $data['logout_url'] = $this->facebook->getLogoutUrl();
@@ -70,5 +71,6 @@ class MainPage extends CI_Controller {
 
         redirect('welcome/login');
     }
+
 
 }

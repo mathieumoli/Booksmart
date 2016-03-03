@@ -513,15 +513,15 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //FOR LOCALHOST
-$config['base_url']	= 'http://localhost:8888/';
+//$config['base_url']	= 'http://localhost:8888/';
 
 
 //MUST BE CHANGED FOR HOSTINGER
 
-//$config['base_url']	= 'http://booksmart.esy.es/';
+$config['base_url']	= 'http://booksmart.ga';
 
 // Include the Facebook and give proper path
-/*require_once("public_html/application/libraries/facebook.php");
+/*require_once("public_html/application/libraries/Facebook.php");
 
 $config = array();
 $config['appId'] = $this->config->item('facebook_app_id');
