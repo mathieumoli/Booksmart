@@ -39,7 +39,7 @@ if(isset($_SESSION['name'])){
     </tr>
     <tr class="menu"><td class="cote">&nbsp;</td>
         <td style="text-align: center">
-            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" href="">Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php echo $user_name;?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
+            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" href="<?php echo site_url('sell');?>">Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php echo $user_name;?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
         <td class="cote">&nbsp;</td>
     </tr>
     <tr class="courseMenu">
