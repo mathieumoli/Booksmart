@@ -30,7 +30,20 @@ if(isset($_SESSION['name'])){
             url: "<?php echo $siteurl ?>/account/"
         }).done(function(data) { // data what is sent back by the php page
             $('#cadrePrincipal').html(data); // display data
-        });}</script>
+        });}
+
+        function sell() {
+
+            $('#cadrePrincipal').html('Loading...');
+            // Do an ajax request
+            $.ajax({
+
+
+
+                url: "<?php echo $siteurl ?>/sell/"
+            }).done(function(data) { // data what is sent back by the php page
+                $('#cadrePrincipal').html(data); // display data
+            });}</script>
 </head>
 <body>
 <table class="mainTab">
@@ -39,7 +52,7 @@ if(isset($_SESSION['name'])){
     </tr>
     <tr class="menu"><td class="cote">&nbsp;</td>
         <td style="text-align: center">
-            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" href="<?php echo site_url('sell');?>">Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php echo $user_name;?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
+            <nav class="nav"><a class="btn btn-danger" type="button" >Home</a><a class="btn btn-danger" type="button" onclick='sell()'>Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php echo $user_name;?></a><a 	class="btn btn-danger" type="button" href="">Cart</a></nav></td>
         <td class="cote">&nbsp;</td>
     </tr>
     <tr class="courseMenu">
