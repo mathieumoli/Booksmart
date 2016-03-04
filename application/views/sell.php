@@ -1,5 +1,5 @@
 
-    <form style="color:white">
+    <form>
         <div class="form-group">
             <label for="bookTitle">Title</label>
             <input type="text" class="form-control" id="bookTitle" placeholder="Title">
