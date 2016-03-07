@@ -86,7 +86,7 @@ if(isset($_SESSION['name'])){
                 echo $_SESSION['name'];
                 echo "</h1>";
 
-            }else echo"<h1> WELCOME ON BOOKSMART</h1>";?>
+            }else echo"<h1> WELCOME TO BOOKSMART</h1>";?>
         </td>
     </tr>
 </table></body></html>
