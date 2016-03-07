@@ -27,11 +27,11 @@
 
             <select class="form-control">
                 <option>Default</option>
-                <option>Mint</option>
-                <option>Very Good</option>
-                <option>Good</option>
-                <option>Fair</option>
-                <option>Poor</option>
+                <option value="mint">Mint</option>
+                <option value="very good">Very Good</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="poor">Poor</option>
             </select>
         </div>
 

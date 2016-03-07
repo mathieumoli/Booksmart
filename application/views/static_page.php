@@ -15,10 +15,14 @@ if(isset($_SESSION['name'])){
 <head>
     <title>BookSmart</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="<?php echo base_url('assets/styles.css');?>" rel="stylesheet" />
+   <link rel="stylesheet" href="<?php echo base_url('assets/styles.css');?>" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="<?php echo base_url('assets/css/bootstrap.css');?>" rel="stylesheet">
     <link href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <script src="<?php echo base_url('assets/jquery-2.2.1.js'); ?>"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script>function account() {
 
         $('#cadrePrincipal').html('Loading...');
@@ -61,19 +65,21 @@ if(isset($_SESSION['name'])){
 <body>
 <table class="mainTab">
     <tr class="logo" >
-        <th class="logo" style="text-align: center" scope="col" colspan="3"><img src="<?php echo base_url('/pictures/BSLogo.png'); ?>" width="504px" height="207px"  alt="Logo"/></th>
+        <th class="logo" style="text-align: center" scope="col" colspan="6"><img src="<?php echo base_url('/pictures/BSLogo.png'); ?>" width="504px" height="207px"  alt="Logo"/></th>
     </tr>
-    <tr class="menu"><td class="cote">&nbsp;</td>
+    <tr class="menu">
+        <td class="cote">&nbsp;</td>
         <td style="text-align: center">
             <nav class="nav"><a class="btn btn-danger" type="button" href="<?php echo $siteurl?>">Home</a><a class="btn btn-danger" type="button" onclick='sell()'>Sell</a><a 	class="btn btn-danger" type="button" onclick='account()'><?php echo $user_name;?></a><a 	class="btn btn-danger" type="button" onclick='cart()'>Cart</a></nav></td>
         <td class="cote">&nbsp;</td>
     </tr>
-    <tr class="courseMenu">
-        <td colspan="3">HERE THE BEAUTIFUL COURSE MENU </td>
+    <tr class="courseMenu"><td colspan="3">
+       <?php include("domainbanner.php") ?>
+        </td>
     </tr>
     <tr class="mainPart">
-        <td class="search">HERE OUR BEAUTIFUL RESEARCH FORM</td>
-        <td id="cadrePrincipal" colspan="2">
+        <td class="search"><?php include("researchform.php") ?></td>
+        <td id="cadrePrincipal" colspan="5">
 
             <?if(isset($_SESSION['name'])){
                 echo "<h1> Bonjour ";
