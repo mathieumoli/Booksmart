@@ -1,8 +1,8 @@
 
-    <form>
+    <form method="post" action="insertdata.php">
         <div class="form-group">
-            <label for="bookTitle">Title</label>
-            <input type="text" class="form-control" id="bookTitle" placeholder="Title">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Title">
         </div>
         <div class="form-group">
             <label for="author">Author</label>
@@ -19,6 +19,24 @@
         <div class="form-group">
             <label for="code">Course Code</label>
             <input type="text" class="form-control" id="code" placeholder="Course Code">
+        </div>
+        <div class="form-group">
+            <label for="domain">Please select a Domain</label>
+            <select id="domain" class="form-control">
+                <?php //domain generator?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="coursename">Course Name</label>
+            <select id="coursename" class="form-control">
+                <?php //coursename generator?>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="universityrname">University/label>
+                <select id="university" class="form-control">
+                    <?php //domain generator?>
+                </select>
         </div>
         <div>
             <label for = "selectCondition">Select the Condition of the Book</label> <button type="button" class="btn btn-default btn-xs">
@@ -44,4 +62,5 @@
 
 
         <button type="submit" class="btn btn-default">Submit</button>
+
     </form>
