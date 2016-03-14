@@ -17,7 +17,7 @@ class MainPage extends CI_Controller {
     public function index()
     {
         $this->load->helper('url');
-        $this->load->view('static_page');
+        $this->load->view('static_page',$lastbooks);
     }
 
 
