@@ -9,7 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class MainPage extends CI_Controller {
 
-    function __construct() {
+    function __construct()
+    {
         parent::__construct();
     }
 
@@ -18,6 +19,7 @@ class MainPage extends CI_Controller {
     {
         $this->load->helper('url');
         $this->load->view('static_page');
+        $this->load->database();
     }
 
 

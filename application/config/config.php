@@ -23,8 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
-
+$config['base_url']	= 'http://localhost:8888/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -513,18 +512,18 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //FOR LOCALHOST
-$config['base_url']	= 'http://localhost:8888/';
-
+//$config['base_url']	= 'http://localhost:8888/';
+//$config['base_url'] = 'http://booksmart.esy.es/';
 
 //MUST BE CHANGED FOR HOSTINGER
 
 //$config['base_url']	= 'http://booksmart.ga';
 
 // Include the Facebook and give proper path
-/*require_once("public_html/application/libraries/Facebook.php");
+//require_once("public_html/application/libraries/facebook.php");
 
-$config = array();
-$config['appId'] = $this->config->item('facebook_app_id');
-$config['secret'] = $this->config->item('facebook_secret');
-$config['fileUpload'] = false;
-$facebook = new Facebook($config);*/
+//$config = array();
+//$config['appId'] = $this->config->item('facebook_app_id');
+//$config['secret'] = $this->config->item('facebook_secret');
+//$config['fileUpload'] = false;
+//$facebook = new Facebook($config);

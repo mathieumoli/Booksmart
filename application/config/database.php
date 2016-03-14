@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'a7429454_user',
+	'hostname' => 'db4free.net',
+	'username' => 'rundlel',
 	'password' => 'booksmart2016',
-	'database' => 'a7429454_smart',
+	'database' => 'booksmarttcd',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
@@ -93,4 +93,6 @@ $db['default'] = array(
 	'stricton' => FALSE,
 	'failover' => array(),
 	'save_queries' => TRUE
+
 );
+
