@@ -11,14 +11,13 @@ class MainPage extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-        $this->load->database();
     }
 
 
     public function index()
     {
         $this->load->helper('url');
-        $this->load->view('static_page',$lastbooks);
+        $this->load->view('static_page');
     }
 
 

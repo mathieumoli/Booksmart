@@ -1,5 +1,5 @@
 
-    <form method="post" action="insertdata.php">
+    <form method="post" action="<?php echo 'http://localhost:8888/index.php/Insertdata/'?>">
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" id="title" placeholder="Title">
@@ -23,19 +23,40 @@
         <div class="form-group">
             <label for="domain">Please select a Domain</label>
             <select id="domain" class="form-control">
-                <?php //domain generator?>
+                <?php
+
+                $domain = $this->db->get('Domain');
+                foreach ($domain->result() as $row){
+                    echo " <option >";
+                    echo $row->name;
+                    echo "</option>";
+                }?>
             </select>
         </div>
         <div class="form-group">
             <label for="coursename">Course Name</label>
             <select id="coursename" class="form-control">
-                <?php //coursename generator?>
+                <?php
+
+                $domain = $this->db->get('Course');
+                foreach ($domain->result() as $row){
+                    echo " <option >";
+                    echo $row->name;
+                    echo "</option>";
+                }?>
             </select>
         </div>
         <div class="form-group">
-            <label for="universityrname">University/label>
+            <label for="universityrname">University</label>
                 <select id="university" class="form-control">
-                    <?php //domain generator?>
+                    <?php
+
+                    $domain = $this->db->get('Course');
+                    foreach ($domain->result() as $row){
+                        echo " <option >";
+                        echo $row->college;
+                        echo "</option>";
+                    }?>
                 </select>
         </div>
         <div>

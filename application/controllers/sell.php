@@ -13,6 +13,7 @@ class sell extends CI_Controller {
 
     // Store user information and send to profile page
     public function index() {
+
         $this->load->view('sell');
 
     }
