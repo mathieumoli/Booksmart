@@ -81,12 +81,19 @@ if(isset($_SESSION['name'])){
         <td class="search"><?php include("researchform.php") ?></td>
         <td id="cadrePrincipal" colspan="5">
 
-            <?if(isset($_SESSION['name'])){
-                echo "<h1> Bonjour ";
-                echo $_SESSION['name'];
-                echo "</h1>";
+            <?php
+                if(isset($title)){
+                echo "<h1> The book '";
+                echo $title;
+                echo "' is on sale !</h1>";
 
-            }else echo"<h1> WELCOME TO BOOKSMART</h1>";?>
+            }
+            else{ if(isset($log)){
+                echo $log;
+            }else{
+               echo "<h1> WELCOME TO BOOKSMART</h1>";
+            }
+            }?>
         </td>
     </tr>
 </table></body></html>

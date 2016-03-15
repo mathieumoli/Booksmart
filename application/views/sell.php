@@ -1,85 +1,80 @@
+<form method="post" action="<?php echo 'http://localhost:8888/index.php/sell/addBook/'?>">
 
-    <form method="post" action="<?php echo 'http://localhost:8888/index.php/Insertdata/'?>">
-        <div class="form-group">
+
             <label for="title">Title</label>
-            <input type="text" class="form-control" id="title" placeholder="Title">
-        </div>
-        <div class="form-group">
+            <input type="text" class="form-control" name="title" value="" id="title" placeholder="Title">
+
+
             <label for="author">Author</label>
-            <input type="text" class="form-control" id="author" placeholder="Author">
-        </div>
-        <div class="form-group">
+            <input type="text" class="form-control" name="author" value="" id="author" placeholder="Author">
+
+
             <label for="subject">Subject</label>
-            <input type="text" class="form-control" id="subject" placeholder="Subject">
-        </div>
-        <div class="form-group">
+            <input type="text" class="form-control" name="subject" value="" id="subject" placeholder="Subject">
+
+
             <label for="price">Price</label>
-            <input type="float" class="form-control" id="price" placeholder="Price">
-        </div>
-        <div class="form-group">
+            <input type="float" class="form-control" name="price" value="" id="price" placeholder="Price">
+
+
             <label for="code">Course Code</label>
-            <input type="text" class="form-control" id="code" placeholder="Course Code">
-        </div>
-        <div class="form-group">
+            <input type="text" class="form-control" name="coursecode" value="" id="coursecode" placeholder="Course Code">
+
+
             <label for="domain">Please select a Domain</label>
-            <select id="domain" class="form-control">
+            <select name="domain" id="domain" class="form-control">
                 <?php
 
                 $domain = $this->db->get('Domain');
                 foreach ($domain->result() as $row){
-                    echo " <option >";
+                    echo " <option value=\"".$row->name."\">";
+
                     echo $row->name;
                     echo "</option>";
                 }?>
             </select>
-        </div>
-        <div class="form-group">
+
             <label for="coursename">Course Name</label>
-            <select id="coursename" class="form-control">
+            <select name="coursename" id="coursename" class="form-control">
                 <?php
 
                 $domain = $this->db->get('Course');
                 foreach ($domain->result() as $row){
-                    echo " <option >";
+                    echo " <option value=\"".$row->name."\">";
                     echo $row->name;
                     echo "</option>";
                 }?>
             </select>
-        </div>
-        <div class="form-group">
-            <label for="universityrname">University</label>
-                <select id="university" class="form-control">
+
+            <label for="university">University</label>
+                <select name="university" id="university" class="form-control">
                     <?php
 
                     $domain = $this->db->get('Course');
                     foreach ($domain->result() as $row){
-                        echo " <option >";
+                        echo " <option value=\"".$row->college."\">";
                         echo $row->college;
                         echo "</option>";
                     }?>
                 </select>
-        </div>
-        <div>
+
             <label for = "selectCondition">Select the Condition of the Book</label> <button type="button" class="btn btn-default btn-xs">
             <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             </button>
 
-            <select class="form-control">
-                <option>Default</option>
+            <select name="condition" id="condition" class="form-control">
                 <option value="mint">Mint</option>
                 <option value="very good">Very Good</option>
                 <option value="good">Good</option>
                 <option value="fair">Fair</option>
-                <option value="poor">Poor</option>
+                <option value="poor" selected="true">Poor</option>
             </select>
-        </div>
 
-        <div>
             <br>
             <label for="exampleInputFile">Upload Photo</label>
             <input type="file" id="exampleInputFile">
             <p class="help-block">Upload photos to assure the buyer your book is in good condition</p>
-        </div>
+
 
 
         <button type="submit" class="btn btn-default">Submit</button>
