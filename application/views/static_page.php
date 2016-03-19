@@ -82,12 +82,26 @@ if(isset($_SESSION['name'])){
         <td id="cadrePrincipal" colspan="5">
 
             <?php
+            if(isset($displayBook)){
+                echo "<h1>More information about ".$displayBook['title']."</h1>";
+                echo "<table>";
+                echo "<tr><td>".$displayBook['title']." by ".$displayBook['author']."</td></tr>";
+                echo "<tr><td>CourseCode: ".$displayBook['coursecode']."</td><td>Price: ".$displayBook['price']."€</td></tr>";
+                echo "<tr><td>Subject: ".$displayBook['subject']."</td><td>Condition: ".$displayBook['cond']."</td></tr>";
+                echo "<tr><td>Date on sale: ".$displayBook['date']."</td><td>Course name: ".$displayBook['coursename']."</td></tr>";
+                echo "<tr><td>College: ".$displayBook['college']."</td><td>Domaine name: ".$displayBook['domainname']."</td></tr>";
+
+                echo"<tr><td colspan='2'><button type=\"button\" value=\"".$displayBook['id']."\" href=\"".$siteurl."/mainpage/book/".$displayBook['id']."\" class=\"btn btn-success\">Buy it !</button></td></tr>";
+            }else
+
+
+
             if(isset($SQLResult)){
                 echo "<table>";
                 foreach($SQLResult->result() as $book)
                 {echo "<tr><td>".$book->title." by ".$book->author."</td></tr>";
                 echo "<tr><td>".$book->coursecode."</td><td>".$book->price."€</td></tr>";
-                echo"<tr><td ><button type=\"button\" value=\"".$book->id."\" class=\"btn btn-success\">Buy it !</button><td><button type=\"button\" value=\"".$book->id."\" class=\"btn btn-success\">More Details</button></td></td></tr>";
+                echo"<tr><td ><button type=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" class=\"btn btn-success\">Buy it !</button><td><a  class=\"btn btn-info\" role=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" >More Details</a></td></td></tr>";
                 }
                 echo "</table><br/><br/>";
             }else

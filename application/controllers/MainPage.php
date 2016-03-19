@@ -132,5 +132,20 @@ class MainPage extends CI_Controller {
         redirect('welcome/login');
     }
 
+    public function book($bookid){
+
+        $this->load->helper('url');
+        $this->load->database();
+
+        $query1 = "SELECT B.id AS id,B.cond AS cond,B.title AS title,B.author AS author,B.price AS price,B.subject AS subject,B.date AS date,B.coursecode AS coursecode,C.name AS coursename,C.college AS college,D.name AS domainname
+                    FROM Course as C JOIN Book as B ON C.id=B.courseid JOIN Domain as D ON D.id=B.domainid
+                    WHERE B.id=".$bookid.";";
+
+            $book= $this->db->query($query1)->row_array();
+        $data['displayBook']=$book;
+        $this->load->view('static_page',$data);
+
+
+    }
 
 }
