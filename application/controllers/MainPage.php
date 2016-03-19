@@ -17,7 +17,65 @@ class MainPage extends CI_Controller {
     public function index()
     {
         $this->load->helper('url');
+        $this->load->database();
+        $query="";
+        $quer=null;
+        if(isset($_POST['title'])||isset($_POST['author'])||isset($_POST['subject'])||isset($_POST['price'])||isset($_POST['code']))
+        {
+            $query1 = "SELECT id,title,author,price,coursecode FROM Book ";
+
+            if(!empty($_POST['cond'])){
+                if($_POST['cond']!='d'){
+                    $quer=" cond = '".$_POST['cond']."'";
+                }
+            }
+            if(!empty($_POST['code'])){
+                if($quer==null){
+                    $quer=" coursecode = '".$_POST['code']."'";
+                }else{
+                    $quer=" coursecode = '".$_POST['code']."' ".$quer;
+                }
+            }
+            if(!empty($_POST['price'])){
+                if($quer==null){
+                    $quer="( price BETWEEN 'O' AND '".$_POST['price']."') ";
+                }else{
+                    $quer=" (price BETWEEN 'O' AND '".$_POST['price']."') AND ".$quer;
+                }
+            }
+            if(!empty($_POST['subject'])){
+                if($quer==null){
+                    $quer=" subject LIKE '%".$_POST['subject']."%'";
+                }else{
+                    $quer=" subject LIKE '%".$_POST['subject']."%' AND ".$quer;
+                }
+            }
+            if(!empty($_POST['author'])){
+                if($quer==null){
+                    $quer=" author LIKE '%".$_POST['author']."%'";
+                }else{
+                    $quer=" author LIKE '%".$_POST['author']."%' AND ".$quer;
+                }
+            }
+            if(!empty($_POST['title'])){
+                if($quer==null){
+                    $quer=" title LIKE '%".$_POST['title']."%'";
+                }else{
+                    $quer=" title LIKE '%".$_POST['title']."%' AND ".$quer;
+                }
+            }
+            if($quer!=""){
+                $query=$query1."WHERE ".$quer.";";
+            }else{
+                $query=$query1.";";
+            }$data['query']=$query;
+            $data['SQLResult'] = $this->db->query($query);
+            $this->load->view('static_page',$data);
+
+        }else{
         $this->load->view('static_page');
+        }
+
     }
 
 
@@ -57,6 +115,8 @@ class MainPage extends CI_Controller {
                 'scope' => array("email") // permissions here
             ));
         }
+
+
         $this->load->view('login',$data);
 
     }

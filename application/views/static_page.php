@@ -82,6 +82,15 @@ if(isset($_SESSION['name'])){
         <td id="cadrePrincipal" colspan="5">
 
             <?php
+            if(isset($SQLResult)){
+                echo "<table>";
+                foreach($SQLResult->result() as $book)
+                {echo "<tr><td>".$book->title." by ".$book->author."</td></tr>";
+                echo "<tr><td>".$book->coursecode."</td><td>".$book->price."€</td></tr>";
+                echo"<tr><td ><button type=\"button\" value=\"".$book->id."\" class=\"btn btn-success\">Buy it !</button><td><button type=\"button\" value=\"".$book->id."\" class=\"btn btn-success\">More Details</button></td></td></tr>";
+                }
+                echo "</table><br/><br/>";
+            }else
                 if(isset($title)){
                 echo "<h1> The book '";
                 echo $title;

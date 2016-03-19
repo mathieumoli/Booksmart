@@ -8,45 +8,32 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
-<script>$(function() {
-$( "#slider-range" ).slider({
-range: true,
-min: 0,
-max: 100,
-values: [ 5, 50 ],
-slide: function( event, ui ) {
-$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
-}
-});
-$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
-" - $" + $( "#slider-range" ).slider( "values", 1 ) );
-});</script>
-<form style="text-align: center;padding-left: 10px;padding-right: 10px; color: floralwhite;">
+
+<form style="text-align: center;padding-left: 10px;padding-right: 10px; color: floralwhite;" method="post" action="<?php echo 'http://localhost:8888/index.php/Mainpage/'?>">
 
         <label for="bookTitle">Title</label></br>
-        <input type="text" id="bookTitle" placeholder="Title"></br>
+        <input style="color:black;" type="text" id="title" name="title" placeholder="Title"></br>
 
 
         <label for="author">Author</label></br>
-        <input type="text"  id="author" placeholder="Author"></br>
+        <input style="color:black;" type="text"  id="author" name="author" placeholder="Author"></br>
 
 
         <label for="subject">Subject</label></br>
-        <input type="text"  id="subject" placeholder="Subject"></br>
+        <input style="color:black;" type="text"  id="subject" name="subject" placeholder="Subject"></br>
 
 
-        <label for="amount">Price range:</label></br>
-        <input type="text" id="amount" readonly style="border:0; color:black; font-weight:bold;"></br></br>
-        <div id="slider-range"></div></br>
+        <label for="amount">Max Price</label></br>
+        <input style="color:black;" type="number" name="price"></br>
 
 
         <label for="code">Course Code</label></br>
-        <input type="text"  id="code" placeholder="Course Code"></br>
+        <input style="color:black;" type="text"  id="code" name="code" placeholder="Course Code"></br>
 
 
         <label for = "selectCondition">the Book Condition</label>
-        </br><select >
-            <option>Default</option>
+        </br><select  name="cond" id="cond">
+            <option value="d">Default</option>
             <option value="mint">Mint</option>
             <option value="very good">Very Good</option>
             <option value="good">Good</option>
