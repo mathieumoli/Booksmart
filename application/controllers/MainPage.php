@@ -66,6 +66,7 @@ class MainPage extends CI_Controller {
             }
             if($quer!=""){
                 $query=$query1."WHERE ".$quer.";";
+
             }else{
                 $query=$query1.";";
             }$data['query']=$query;
@@ -73,7 +74,10 @@ class MainPage extends CI_Controller {
             $this->load->view('static_page',$data);
 
         }else{
-        $this->load->view('static_page');
+
+        $query10 = "SELECT id,title,author,price,coursecode FROM Book ORDER BY date DESC LIMIT 10;";
+            $data['tenLast'] = $this->db->query($query10);
+            $this->load->view('static_page',$data);
         }
 
     }
@@ -145,6 +149,16 @@ class MainPage extends CI_Controller {
         $data['displayBook']=$book;
         $this->load->view('static_page',$data);
 
+
+    }
+
+    public function displayBookByDomain($domainid){
+        $this->load->helper('url');
+        $this->load->database();
+
+        $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE domainid=".$domainid.";";
+        $data['tenLast'] = $this->db->query($query10);
+        $this->load->view('static_page',$data);
 
     }
 

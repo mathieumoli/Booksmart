@@ -111,11 +111,24 @@ if(isset($_SESSION['name'])){
                 echo "' is on sale !</h1>";
 
             }
-            else{ if(isset($log)){
-                echo $log;
-            }else{
-               echo "<h1> WELCOME TO BOOKSMART</h1>";
-            }
+            else {
+                if (isset($log)) {
+                    echo $log;
+                } else {
+                    if (isset($tenLast)) {
+                        echo "<h1>10 Last Added Books</h1>";
+                        echo "<table>";
+                        foreach ($tenLast->result() as $book) {
+
+                            echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
+                            echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
+                            echo "<tr><td ><button type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" class=\"btn btn-success\">Buy it !</button><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+                        }
+                        echo "</table><br/><br/>";
+                    } else {
+                        echo "<h1> WELCOME TO BOOKSMART</h1>";
+                    }
+                }
             }?>
         </td>
     </tr>
