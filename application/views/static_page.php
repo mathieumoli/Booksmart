@@ -91,7 +91,7 @@ if(isset($_SESSION['name'])){
                 echo "<tr><td>Date on sale: ".$displayBook['date']."</td><td>Course name: ".$displayBook['coursename']."</td></tr>";
                 echo "<tr><td>College: ".$displayBook['college']."</td><td>Domaine name: ".$displayBook['domainname']."</td></tr>";
 
-                echo"<tr><td colspan='2'><button type=\"button\" value=\"".$displayBook['id']."\" href=\"".$siteurl."/mainpage/book/".$displayBook['id']."\" class=\"btn btn-success\">Buy it !</button></td></tr>";
+                echo"<tr><td colspan='2'><a type=\"button\" value=\"".$displayBook['id']."\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a></td></tr>";
             }else
 
 
@@ -101,7 +101,7 @@ if(isset($_SESSION['name'])){
                 foreach($SQLResult->result() as $book)
                 {echo "<tr><td>".$book->title." by ".$book->author."</td></tr>";
                 echo "<tr><td>".$book->coursecode."</td><td>".$book->price."€</td></tr>";
-                echo"<tr><td ><button type=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" class=\"btn btn-success\">Buy it !</button><td><a  class=\"btn btn-info\" role=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" >More Details</a></td></td></tr>";
+                echo"<tr><td ><a type=\"button\" value=\"".$book->id."\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" >More Details</a></td></td></tr>";
                 }
                 echo "</table><br/><br/>";
             }else
