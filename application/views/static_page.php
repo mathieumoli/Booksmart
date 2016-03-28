@@ -122,6 +122,9 @@ if(isset($_SESSION['name'])){
                         if (isset($delete)) {
                            echo "<h1> Book Deleted ! </h1>";
                         } else {
+                            if(isset($payment)){
+                                echo "<h1> Congratulation! You buy the book(s) for  ".$payment."€<br>We send a mail to the seller to notify him</h1>";
+                            }
                             if (isset($tenLast)) {
                                 echo "<h1>10 Last Added Books</h1>";
                                 echo "<table>";
