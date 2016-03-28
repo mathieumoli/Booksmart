@@ -112,21 +112,30 @@ if(isset($_SESSION['name'])){
 
             }
             else {
+
                 if (isset($log)) {
                     echo $log;
                 } else {
-                    if (isset($tenLast)) {
-                        echo "<h1>10 Last Added Books</h1>";
-                        echo "<table>";
-                        foreach ($tenLast->result() as $book) {
+                    if(isset($addBook)){
+                        echo"BOOK ADDED IN THE CART :".$addBook;
+                    }else {
+                        if (isset($delete)) {
+                           echo "<h1> Book Deleted ! </h1>";
+                        } else {
+                            if (isset($tenLast)) {
+                                echo "<h1>10 Last Added Books</h1>";
+                                echo "<table>";
+                                foreach ($tenLast->result() as $book) {
 
-                            echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
-                            echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
-                            echo "<tr><td ><button type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" class=\"btn btn-success\">Buy it !</button><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+                                    echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
+                                    echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
+                                    echo "<tr><td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+                                }
+                                echo "</table><br/><br/>";
+                            } else {
+                                echo "<h1> WELCOME TO BOOKSMART</h1>";
+                            }
                         }
-                        echo "</table><br/><br/>";
-                    } else {
-                        echo "<h1> WELCOME TO BOOKSMART</h1>";
                     }
                 }
             }?>

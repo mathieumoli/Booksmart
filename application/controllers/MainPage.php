@@ -65,10 +65,10 @@ class MainPage extends CI_Controller {
                 }
             }
             if($quer!=""){
-                $query=$query1."WHERE ".$quer.";";
+                $query=$query1."WHERE ".$quer."AND buyerid IS NULL ;";
 
             }else{
-                $query=$query1.";";
+                $query=$query1."WHERE buyerid IS NULL ;";
             }$data['query']=$query;
             $data['SQLResult'] = $this->db->query($query);
             $this->load->view('static_page',$data);
@@ -144,8 +144,7 @@ class MainPage extends CI_Controller {
         $query1 = "SELECT B.id AS id,B.cond AS cond,B.title AS title,B.author AS author,B.price AS price,B.subject AS subject,B.date AS date,B.coursecode AS coursecode,C.name AS coursename,C.college AS college,D.name AS domainname
                     FROM Course as C JOIN Book as B ON C.id=B.courseid JOIN Domain as D ON D.id=B.domainid
                     WHERE B.id=".$bookid.";";
-
-            $book= $this->db->query($query1)->row_array();
+        $book= $this->db->query($query1)->row_array();
         $data['displayBook']=$book;
         $this->load->view('static_page',$data);
 
@@ -156,8 +155,27 @@ class MainPage extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
 
-        $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE domainid=".$domainid.";";
+        $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE domainid=".$domainid." AND buyerid IS NULL ;";
         $data['tenLast'] = $this->db->query($query10);
+        $this->load->view('static_page',$data);
+
+    }
+
+    public function addCart($bookid){
+        $this->load->helper('url');
+        $this->load->database();
+        if(isset($_SESSION['cart'])){
+            $cart=$_SESSION['cart'];
+            if(!in_array($bookid,$cart)){
+                $cart[]=$bookid;
+            }
+        }else{
+            $cart[]=$bookid;
+        }
+
+        $_SESSION['cart']=$cart;
+        $data['addBook']=$bookid;
+
         $this->load->view('static_page',$data);
 
     }
