@@ -2,7 +2,7 @@
 }else{
     $siteurl="http://localhost:8888/index.php";
 }
-if ($cartDisp):
+if (isset($cartDisp)):
 
     echo "<h1>CART</h1>";
     echo "<table>";
