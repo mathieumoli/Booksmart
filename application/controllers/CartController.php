@@ -18,13 +18,17 @@ class CartController extends CI_Controller {
     {
         $this->load->helper('url');
         $this->load->database();
+        if(isset($_SESSION['cart'])) {
+            if (count($_SESSION['cart'] > 0)) {
+                $ids = implode(",", $_SESSION['cart']);
+                $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE id IN (" . $ids . ");";
+                $data['cartDisp'] = $this->db->query($query10);
+            }
+            $this->load->view('cart_page',$data);
+        }else{
+            $this->load->view('cart_page');
 
-        if(count($_SESSION['cart']>0)){
-            $ids = implode(",", $_SESSION['cart']);
-            $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE id IN (" . $ids . ");";
-            $data['cartDisp'] = $this->db->query($query10);
         }
-        $this->load->view('cart_page',$data);
     }
 
     public function delete($bookid)

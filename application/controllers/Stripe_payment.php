@@ -18,6 +18,8 @@ class Stripe_payment extends CI_Controller {
 
     public function checkout($bill)
     {
+        $this->load->helper('url');
+
         if(isset($_SESSION['id'])) {
             try {
                 require_once('./vendor/autoload.php');
