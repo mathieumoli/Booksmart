@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-if(base_url()=="http://www.booksmart.ga"){$siteurl="http://www.booksmart.ga:8888/public_html/index.php";
+if(base_url()=="http://booksmart.esy.es/"){$siteurl="http://www.booksmart.esy.es/index.php";
 }else{
 $siteurl="http://localhost:8888/index.php";
 }
