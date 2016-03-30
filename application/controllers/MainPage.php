@@ -19,6 +19,8 @@ class MainPage extends CI_Controller {
     {
         $this->load->helper('url');
         $this->load->database();
+        $this->load->library('facebook');
+
         $query="";
         $quer=null;
         if(isset($_POST['title'])||isset($_POST['author'])||isset($_POST['subject'])||isset($_POST['price'])||isset($_POST['code']))

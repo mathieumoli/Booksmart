@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url']	= 'http://localhost:8888/';
-//$config['base_url']	= 'http://www.booksmart.ga/';
+//$config['base_url']	= 'http://booksmart.byethost12.com/';
 /*
 |--------------------------------------------------------------------------
 | Index File
