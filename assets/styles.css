@@ -208,7 +208,7 @@ header, section, footer, aside, article, figure {
     min-height: 100%;
     margin: auto;
 	position: absolute;
-	bottom:0px;
+	/*bottom:0px;*/
 	background-image: url('../../../Dropbox/CoursDublin/EcommerceII/Booksmart/pictures/back.png');
 	top:0px;
 	heigh:100%;
