@@ -23,7 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url']	= 'http://localhost:8888/';
+//$config['base_url']	= 'http://localhost:8888/';
+//$config['base_url']	= 'http://www.booksmart.ga/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -512,8 +513,8 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //FOR LOCALHOST
-$config['base_url']	= 'http://localhost:8888/';
-//$config['base_url'] = 'http://booksmart.esy.es/';
+//$config['base_url']	= 'http://localhost:8888/';
+$config['base_url'] = 'http://booksmart.esy.es/';
 
 //MUST BE CHANGED FOR HOSTINGER
 
