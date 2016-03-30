@@ -1,4 +1,8 @@
-<form method="post" action="<?php echo 'http://localhost:8888/index.php/sell/addBook/'?>">
+<?php if(base_url()=="http://www.booksmart.ga"){$siteurl="http://www.booksmart.ga:8888/index.php";
+}else{
+$siteurl="http://localhost:8888/index.php";
+}?>
+<form method="post" action="<?php echo $siteurl.'/sell/addBook/'?>">
 
 
             <label for="title">Title</label>

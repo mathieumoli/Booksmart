@@ -1,6 +1,6 @@
 <?php
 
-class sell extends CI_Controller
+class Sell extends CI_Controller
 {
 
     public $user = "";
