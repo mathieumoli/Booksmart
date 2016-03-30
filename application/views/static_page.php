@@ -91,7 +91,7 @@ if(isset($_SESSION['name'])){
                 echo "<tr><td>Date on sale: ".$displayBook['date']."</td><td>Course name: ".$displayBook['coursename']."</td></tr>";
                 echo "<tr><td>College: ".$displayBook['college']."</td><td>Domaine name: ".$displayBook['domainname']."</td></tr>";
 
-                echo"<tr><td colspan='2'><a type=\"button\" value=\"".$displayBook['id']."\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a></td></tr>";
+                echo"<tr><td colspan='2'><a type=\"button\" value=\"".$displayBook['id']."\" href=\"" . $siteurl . "/mainpage/addCart/" . $displayBook['id'] . "\" class=\"btn btn-success\">Buy it !</a></td></tr>";
             }else
 
 
