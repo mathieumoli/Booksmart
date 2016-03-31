@@ -1,8 +1,8 @@
-<?php if(base_url()=="http://www.booksmart.ga"){$siteurl="http://www.booksmart.ga:8888/index.php";
+<?php if(base_url()=="http://www.booksmart.ga"){$siteurl="http://www.booksmart.ga:8888/index.php" ;
 }else{
 $siteurl="http://localhost:8888/index.php";
 }?>
-<form method="post" action="<?php echo $siteurl.'/sell/addBook/'?>">
+<form method="post" action="<?php echo $siteurl.'/sell/addBook/'?>" enctype= "multipart/form-data">
 
 
             <label for="title">Title</label>
@@ -76,7 +76,7 @@ $siteurl="http://localhost:8888/index.php";
 
             <br>
             <label for="exampleInputFile">Upload Photo</label>
-            <input type="file" id="exampleInputFile">
+            <input type="file" id="image">
             <p class="help-block">Upload photos to assure the buyer your book is in good condition</p>
 
 
