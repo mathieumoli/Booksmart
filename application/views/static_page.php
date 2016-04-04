@@ -110,13 +110,13 @@ if(isset($_SESSION['name'])){
             if(isset($displayBook)){
                 echo "<b>More information about:</b><h1>".$displayBook['title']."</h1>";
                 echo "<div class=\"table-responsive\"><table class=\"table\">";
-                echo "<tr><td><b>  by ".$displayBook['author']."</b></td></tr>";
-                echo "<tr><td><b>course name: </b>" . $book->coursecode . "</td><td><h4>€" . $book->price . "</h4></td></tr>";
-                echo "<tr><td><b>Subject: </b>".$displayBook['subject']."</td><td><b>Condition: </b>".$displayBook['cond']."</td></tr>";
-                echo "<tr><td><b>Date on sale: </b>".$displayBook['date']."</td><td><b>Course name: </b>".$displayBook['coursename']."</td></tr>";
-                echo "<tr><td><b>College: </b>".$displayBook['college']."</td><td><b>Domaine name: </b>".$displayBook['domainname']."</td></tr>";
+                echo "<tr><td>".$displayBook['title']." by ".$displayBook['author']."</td></tr>";
+                echo "<tr><td>CourseCode: ".$displayBook['coursecode']."</td><td>Price: ".$displayBook['price']."€</td></tr>";
+                echo "<tr><td>Subject: ".$displayBook['subject']."</td><td>Condition: ".$displayBook['cond']."</td></tr>";
+                echo "<tr><td>Date on sale: ".$displayBook['date']."</td><td>Course name: ".$displayBook['coursename']."</td></tr>";
+                echo "<tr><td>College: ".$displayBook['college']."</td><td>Domaine name: ".$displayBook['domainname']."</td></tr>";
 
-                echo"<tr><td colspan='2'><a type=\"button\" value=\"".$displayBook['id']."\" href=\"" . $siteurl . "/mainpage/addCart/" . $displayBook['id'] . "\" class=\"btn btn-success btn-lg btn-block\">Buy it !</a></td></tr></table></div>";
+                echo"<tr><td colspan='2'><a type=\"button\" value=\"".$displayBook['id']."\" href=\"" . $siteurl . "/mainpage/addCart/" . $displayBook['id'] . "\" class=\"btn btn-success\">Buy it !</a></td></tr></table></div>";
             }else
 
 
