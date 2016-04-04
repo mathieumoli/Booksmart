@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-<div id="fixedtop" style="position:absolute; top: 300px; width: 100px; height: 100px;">
+<div id="fixedtop" style="position:absolute; top: 330px; width: 100px; height: 100px;">
 <form style="text-align: center;padding-left: 10px;padding-right: 10px; color: floralwhite; " method="post" action="<?php echo 'http://localhost:8888/index.php/Mainpage/'?>">
 
         <label for="bookTitle">Title</label></br>
