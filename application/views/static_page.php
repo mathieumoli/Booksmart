@@ -110,7 +110,7 @@ if(isset($_SESSION['name'])){
             if(isset($displayBook)){
                 echo "<b>More information about:</b><h1>".$displayBook['title']."</h1>";
                 echo "<div class=\"table-responsive\"><table class=\"table\">";
-                echo "<tr><td>".$displayBook['title']." by ".$displayBook['author']."</td></tr>";
+                echo "<tr><td>Title: ".$displayBook['title']."</td><td>Author: ".$displayBook['author']."</td></tr>";
                 echo "<tr><td>CourseCode: ".$displayBook['coursecode']."</td><td>Price: ".$displayBook['price']."€</td></tr>";
                 echo "<tr><td>Subject: ".$displayBook['subject']."</td><td>Condition: ".$displayBook['cond']."</td></tr>";
                 echo "<tr><td>Date on sale: ".$displayBook['date']."</td><td>Course name: ".$displayBook['coursename']."</td></tr>";

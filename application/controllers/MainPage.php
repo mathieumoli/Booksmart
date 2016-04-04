@@ -25,7 +25,7 @@ class Mainpage extends CI_Controller {
         $quer=null;
         if(isset($_POST['title'])||isset($_POST['author'])||isset($_POST['subject'])||isset($_POST['price'])||isset($_POST['code']))
         {
-            $query1 = "SELECT id,title,author,price,coursecode FROM Book ";
+            $query1 = "SELECT id,title,author,price,coursecode,cond FROM Book ";
 
             if(!empty($_POST['cond'])){
                 if($_POST['cond']!='d'){
@@ -78,7 +78,7 @@ class Mainpage extends CI_Controller {
 
         }else{
 
-        $query10 = "SELECT id,title,author,price,coursecode FROM Book ORDER BY date DESC LIMIT 10;";
+        $query10 = "SELECT id,title,author,price,coursecode,cond FROM Book ORDER BY date DESC LIMIT 10;";
             $data['tenLast'] = $this->db->query($query10);
             $data['titleP']='The 10 Last Added Books';
             $this->load->view('static_page',$data);
@@ -162,7 +162,7 @@ class Mainpage extends CI_Controller {
         $this->load->helper('url');
         $this->load->database();
 
-        $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE domainid=".$domainid." AND buyerid IS NULL ;";
+        $query10 = "SELECT id,title,author,price,coursecode,cond FROM Book WHERE domainid=".$domainid." AND buyerid IS NULL ;";
         $data['tenLast'] = $this->db->query($query10);
         $dom="SELECT name FROM Domain WHERE id='".$domainid."';";
         $exec=$this->db->query($dom);
