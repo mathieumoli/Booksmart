@@ -80,8 +80,10 @@ class Mainpage extends CI_Controller {
 
         $query10 = "SELECT id,title,author,price,coursecode FROM Book ORDER BY date DESC LIMIT 10;";
             $data['tenLast'] = $this->db->query($query10);
+            $data['titleP']='The 10 Last Added Books';
             $this->load->view('static_page',$data);
         }
+
 
     }
 
@@ -149,6 +151,8 @@ class Mainpage extends CI_Controller {
                     WHERE B.id=".$bookid." AND buyerid IS NULL;";
         $book= $this->db->query($query1)->row_array();
         $data['displayBook']=$book;
+
+
         $this->load->view('static_page',$data);
 
 
@@ -160,6 +164,14 @@ class Mainpage extends CI_Controller {
 
         $query10 = "SELECT id,title,author,price,coursecode FROM Book WHERE domainid=".$domainid." AND buyerid IS NULL ;";
         $data['tenLast'] = $this->db->query($query10);
+        $dom="SELECT name FROM Domain WHERE id='".$domainid."';";
+        $exec=$this->db->query($dom);
+        foreach ($exec->result() as $dom) {
+
+            $data['titleP']=$dom->name;
+        }
+
+
         $this->load->view('static_page',$data);
 
     }

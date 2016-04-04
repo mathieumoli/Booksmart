@@ -74,6 +74,37 @@ class Sell extends CI_Controller
              $this->db->set('sellerid', $_SESSION['id']);*/
 
             $this->db->insert('Book');
+            if(isset($_FILES['image']))
+            {
+                $file = $_FILES['image']['tmp_name'];
+
+            }
+
+
+
+
+                $image = addslashes(file_getcontents($_FILES['image']['tmp_name']));
+                $image_name = addslashes($_FILES['image']['name']);
+                $image_size = getimagesize($_FILES['image']['tmp_name']);
+
+                if($image_size==FALSE)
+                {
+                    $data['result']= "not an image";
+                }
+                else
+                {
+                    $imagequery = "INSERT INTO Image (name,image) VALUES('".$image_name."','".$image."');";
+                    if(! $this->db->query($imagequery))
+                    {
+                        $data['result']="problem uploading image";
+                    }
+                    else
+                    {
+
+                        $data['result']= "image uploaded";
+                    }
+                }
+
         }else{$data['log']="<h1> You must be log to sell a book</h1>";
         }
             $this->load->view('static_page', $data);

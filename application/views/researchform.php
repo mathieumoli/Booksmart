@@ -9,7 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 ?>
 
-<form style="text-align: center;padding-left: 10px;padding-right: 10px; color: floralwhite;" method="post" action="<?php echo 'http://localhost:8888/index.php/Mainpage/'?>">
+<div id="fixedtop" style="position:absolute; top: 300px; width: 100px; height: 100px;">
+<form style="text-align: center;padding-left: 10px;padding-right: 10px; color: floralwhite; " method="post" action="<?php echo 'http://localhost:8888/index.php/Mainpage/'?>">
 
         <label for="bookTitle">Title</label></br>
         <input style="color:black;" type="text" id="title" name="title" placeholder="Title"></br>
@@ -45,3 +46,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <button type="submit" class="btn btn-info">Search</button></br></br>
 </form>
+</div>

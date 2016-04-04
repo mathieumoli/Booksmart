@@ -60,7 +60,32 @@ if(isset($_SESSION['name'])){
                 url: "<?php echo $siteurl ?>/cartcontroller/"
             }).done(function(data) { // data what is sent back by the php page
                 $('#cadrePrincipal').html(data); // display data
-            });}</script>
+            });}
+
+        // allocate the function to the window scrolling
+        window.onscroll = fixedTop;
+
+        var startingY = false;
+
+        function fixedTop() {
+
+            // First top value recovery
+            if (!startingY) startingY = parseInt(document.getElementById("fixedtop").style.top);
+
+            // Scroll top value
+            if (window.pageYOffset) {
+                var yrt = window.pageYOffset;
+            } else if (document.body.scrollTop){
+                var yrt = document.body.scrollTop;
+            } else {
+                var yrt = document.documentElement.scrollTop;
+            }
+
+            document.getElementById("fixedtop").style.top = (yrt + startingY)+ "px";
+        }
+    </script>
+
+
 </head>
 <body>
 <table class="mainTab">
@@ -97,6 +122,8 @@ if(isset($_SESSION['name'])){
 
 
             if(isset($SQLResult)){
+                echo "<h1> Research Result </h1>";
+
                 echo "<table>";
                 foreach($SQLResult->result() as $book)
                 {echo "<tr><td>".$book->title." by ".$book->author."</td></tr>";
@@ -109,6 +136,7 @@ if(isset($_SESSION['name'])){
                 echo "<h1> The book '";
                 echo $title;
                 echo "' is on sale !</h1>";
+                    echo $result;
 
             }
             else {
@@ -126,8 +154,8 @@ if(isset($_SESSION['name'])){
                                 echo "<h1> Congratulation! You buy the book(s) for  ".$payment."€<br>We send a mail to the seller to notify him</h1>";
                             }
                             if (isset($tenLast)) {
-                                echo "<h1>10 Last Added Books</h1>";
-                                echo "<table>";
+                                echo "<h1>".$titleP."</h1>";
+                                echo "<table id='listBooks'>";
                                 foreach ($tenLast->result() as $book) {
 
                                     echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
@@ -136,7 +164,7 @@ if(isset($_SESSION['name'])){
                                 }
                                 echo "</table><br/><br/>";
                             } else {
-                                echo "<h1> WELCOME TO BOOKSMART</h1>";
+                                echo "<h1> WELCOME ON BOOKSMART</h1>";
                             }
                         }
                     }

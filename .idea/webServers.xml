@@ -3,14 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="0b8aca13-36e9-4aab-8432-ba20ccf2bd80" name="Booksmart" url="http://localhost">
-        <fileTransfer mountedRoot="$PROJECT_DIR$/../Deployement/Booksmart/app" accessType="MOUNT" />
-      </webServer>
-      <webServer id="0d3bd279-9a24-4674-8bfe-f6aacd1ab17d" name="Booksmart.ga" url="http://booksmart.ga">
-        <fileTransfer host="booksmart.ga" port="21" username="a7429454">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
-          </advancedOptions>
-        </fileTransfer>
+        <fileTransfer mountedRoot="$PROJECT_DIR$/../Deployement/Booksmart" accessType="MOUNT" />
       </webServer>
     </option>
   </component>
