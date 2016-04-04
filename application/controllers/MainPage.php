@@ -68,10 +68,10 @@ class Mainpage extends CI_Controller {
                 }
             }
             if($quer!=""){
-                $query=$query1."WHERE ".$quer."AND buyerid IS NULL ;";
+                $query=$query1." WHERE ".$quer." AND buyerid IS NULL ;";
 
             }else{
-                $query=$query1."WHERE buyerid IS NULL ;";
+                $query=$query1." WHERE buyerid IS NULL ;";
             }$data['query']=$query;
             $data['SQLResult'] = $this->db->query($query);
             $this->load->view('static_page',$data);
