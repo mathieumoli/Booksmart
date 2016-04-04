@@ -15,7 +15,7 @@ if (isset($cartDisp)):
         echo "<td><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/cartcontroller/delete/" . $book->id . "\" class=\"btn btn-danger\">Delete !</a></td><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></tr>";
         }
         echo "</tbody></table></div><br/><br/>";
-        echo "<h1>TOTAL:</h1> ".$sum."€<br>";
+        echo "<h1>TOTAL: ".$sum."€</h1><br>";
         echo "10% is for the maintenance, the server and Jack who tried to debug it day & night";
         $_SESSION['bill']=$sum;
     ?>
