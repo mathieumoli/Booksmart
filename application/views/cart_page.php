@@ -4,17 +4,17 @@
 }
 if (isset($cartDisp)):
 
-    echo "<h1>CART</h1>";
+    echo "<h1 class=\"heading-cart\">CART</h1>";
     echo "<div class=\"table-responsive\"><table class=\"table\">";
     $sum=0;
         foreach ($cartDisp->result() as $book) {
         $sum+=$book->price+0.1*$book->price;
-        echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
-        echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
-        echo "<tr><td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/cartcontroller/delete/" . $book->id . "\" class=\"btn btn-danger\">Delete !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+        echo "<tr><td><h4>" . $book->title . "</h4> by " . $book->author . "</td></tr>";
+        echo "<tr><td><b> CourseName: </b>" . $book->coursecode . "</td><td><h4>€" . $book->price . "</h4></td></tr>";
+        echo "<tr><td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/cartcontroller/delete/" . $book->id . "\" class=\"btn btn-danger\">Delete!</a><td><a  class=\"btn btn-link \" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
         }
         echo "</table></div><br/><br/>";
-        echo "<h1>TOTAL:</h1> ".$sum."€<br>";
+        echo "<h1>TOTAL:   €".$sum."</h1> <br/><br/><br/>";
         echo "10% is for the maintenance, the server and Jack who tries to debug it day & night";
         $_SESSION['bill']=$sum;
     ?>
