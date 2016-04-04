@@ -4,7 +4,7 @@
 }
 if (isset($cartDisp)):
 
-    echo "<h1>CART</h1>";
+    echo "<h1 class=\"heading-cart\">CART</h1>";
     echo "<div class=\"table-responsive\"><table class=\"table table-striped\"><tbody>";
     echo "<tr><th>Title</th><th>Author</th><th>CourseCode</th><th>Price</th><th>Delete it !</th><th>More Details</th></tr>";
     $sum=0;
