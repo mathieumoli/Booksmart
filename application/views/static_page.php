@@ -138,7 +138,6 @@ if(isset($_SESSION['name'])){
                 echo "<h1> The book '";
                 echo $title;
                 echo "' is on sale !</h1>";
-                    echo $result;
 
             }
             else {

@@ -25,7 +25,7 @@ class Mainpage extends CI_Controller {
         $quer=null;
         if(isset($_POST['title'])||isset($_POST['author'])||isset($_POST['subject'])||isset($_POST['price'])||isset($_POST['code']))
         {
-            $query1 = "SELECT id,title,author,price,coursecode,cond FROM Book ";
+            $query1 = "SELECT id,title,author,price,coursecode,cond FROM Book";
 
             if(!empty($_POST['cond'])){
                 if($_POST['cond']!='d'){
@@ -78,7 +78,7 @@ class Mainpage extends CI_Controller {
 
         }else{
 
-        $query10 = "SELECT id,title,author,price,coursecode,cond FROM Book ORDER BY date DESC LIMIT 10;";
+        $query10 = "SELECT id,title,author,price,coursecode,cond FROM Book WHERE buyerid IS NULL ORDER BY date DESC LIMIT 10;";
             $data['tenLast'] = $this->db->query($query10);
             $data['titleP']='The 10 Last Added Books';
             $this->load->view('static_page',$data);
@@ -148,7 +148,7 @@ class Mainpage extends CI_Controller {
 
         $query1 = "SELECT B.id AS id,B.cond AS cond,B.title AS title,B.author AS author,B.price AS price,B.subject AS subject,B.date AS date,B.coursecode AS coursecode,C.name AS coursename,C.college AS college,D.name AS domainname
                     FROM Course as C JOIN Book as B ON C.id=B.courseid JOIN Domain as D ON D.id=B.domainid
-                    WHERE B.id=".$bookid." AND buyerid IS NULL;";
+                    WHERE B.id=".$bookid." AND B.buyerid IS NULL;";
         $book= $this->db->query($query1)->row_array();
         $data['displayBook']=$book;
 
