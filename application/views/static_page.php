@@ -124,11 +124,13 @@ if(isset($_SESSION['name'])){
             if(isset($SQLResult)){
                 echo "<h1> Research Result </h1>";
 
-                echo "<div class=\"table-responsive\"><table class=\"table\">";
+                echo "<div class=\"table-responsive\"><table class=\"table table-bordered\"><tbody>";
+                echo "<tr><th>Title</th><th>Author</th><th>CourseCode</th><th>Price</th><th>Condition</th><th>Buy it !</th><th>More Details</th></tr>";
+
                 foreach($SQLResult->result() as $book)
-                {echo "<tr><td>".$book->title." by ".$book->author."</td></tr>";
-                echo "<tr><td>".$book->coursecode."</td><td>".$book->price."€</td></tr>";
-                echo"<tr><td ><a type=\"button\" value=\"".$book->id."\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" >More Details</a></td></td></tr>";
+                {echo "<tr><td>".$book->title."</td><td> ".$book->author."</td>";
+                echo "<td>".$book->coursecode."</td><td>".$book->price."€</td><td>".$book->cond."</td>";
+                echo"<td ><a type=\"button\" value=\"".$book->id."\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"".$book->id."\" href=\"".$siteurl."/mainpage/book/".$book->id."\" >More Details</a></td></td></tr>";
                 }
                 echo "</table></div><br/><br/>";
             }else
@@ -155,12 +157,13 @@ if(isset($_SESSION['name'])){
                             }
                             if (isset($tenLast)) {
                                 echo "<h1>".$titleP."</h1>";
-                                echo "<div class=\"table-responsive\"><table class=\"table\" id='listBooks'>";
+                                echo "<div class=\"table-responsive\"><table class=\"table table-bordered\"><tbody>";
+                                echo "<tr><th>Title</th><th>Author</th><th>CourseCode</th><th>Price</th><th>Condition</th><th>Buy it !</th><th>More Details</th></tr>";
                                 foreach ($tenLast->result() as $book) {
 
-                                    echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
-                                    echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
-                                    echo "<tr><td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+                                    echo "<tr><td>" . $book->title . "</td><td> " . $book->author . "</td>";
+                                    echo "<td>" . $book->coursecode . "</td><td>" . $book->price . "€</td><td>".$book->cond."</td>";
+                                    echo "<td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/addCart/" . $book->id . "\" class=\"btn btn-success\">Buy it !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
                                 }
                                 echo "</table></div><br/><br/>";
                             } else {

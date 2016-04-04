@@ -9,7 +9,8 @@
 <script src="https://checkout.stripe.com/checkout.js"
 class="stripe-button"
 data-key="pk_test_tTFVZGf2y1OyIopL3ELkwqpO"
-data-description="BookSmart Bill <?php echo  $_SESSION['bill'];?>"
+data-description="BookSmart Bill <?php echo  $_SESSION['bill'];?>€"
 data-amount="<?php echo ($sum*100);?>"
-data-locale="auto"></script>
+data-locale="EN"
+data-currency="EUR"></script>
 </form>

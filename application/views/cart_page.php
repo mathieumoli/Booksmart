@@ -5,17 +5,18 @@
 if (isset($cartDisp)):
 
     echo "<h1>CART</h1>";
-    echo "<div class=\"table-responsive\"><table class=\"table\">";
+    echo "<div class=\"table-responsive\"><table class=\"table table-striped\"><tbody>";
+    echo "<tr><th>Title</th><th>Author</th><th>CourseCode</th><th>Price</th><th>Delete it !</th><th>More Details</th></tr>";
     $sum=0;
         foreach ($cartDisp->result() as $book) {
         $sum+=$book->price+0.1*$book->price;
-        echo "<tr><td>" . $book->title . " by " . $book->author . "</td></tr>";
-        echo "<tr><td>" . $book->coursecode . "</td><td>" . $book->price . "€</td></tr>";
-        echo "<tr><td ><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/cartcontroller/delete/" . $book->id . "\" class=\"btn btn-danger\">Delete !</a><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></td></tr>";
+        echo "<tr><td> " . $book->title . "</td><td>  " . $book->author . "</td>";
+        echo "<td> " . $book->coursecode . "</td><td> " . $book->price . "€</td>";
+        echo "<td><a type=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/cartcontroller/delete/" . $book->id . "\" class=\"btn btn-danger\">Delete !</a></td><td><a  class=\"btn btn-info\" role=\"button\" value=\"" . $book->id . "\" href=\"" . $siteurl . "/mainpage/book/" . $book->id . "\" >More Details</a></td></tr>";
         }
-        echo "</table></div><br/><br/>";
+        echo "</tbody></table></div><br/><br/>";
         echo "<h1>TOTAL:</h1> ".$sum."€<br>";
-        echo "10% is for the maintenance, the server and Jack who tries to debug it day & night";
+        echo "10% is for the maintenance, the server and Jack who tried to debug it day & night";
         $_SESSION['bill']=$sum;
     ?>
 <?php include("stripe.php");?>

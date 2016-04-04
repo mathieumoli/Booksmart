@@ -29,7 +29,7 @@ class Stripe_payment extends CI_Controller {
 
                 $charge = \Stripe\Charge::create(array(
                     "amount" => $bill * 100,
-                    "currency" => "eur",
+                    "currency" => "EUR",
                     "card" => $_POST['stripeToken'],
                     "description" => "Transaction BookSmart"
                 ));
